@@ -1,0 +1,44 @@
+HELP US HIT OUR GOAL - website files
+=====================================
+
+What's in this folder
+- index.html   the page
+- data.json    the numbers and links (the only file you need to edit)
+- img/         logos and Pudsey
+- fonts/       the fonts (served with the site, so no visitor data goes to Google)
+
+Updating the scoreboard
+Open data.json and change the values, for example:
+  "raised": 1250,
+  "target": 2000,
+  "gofundme": "https://www.gofundme.com/f/your-fundraiser",
+  "updated": "2026-10-20"
+Keep the quote marks and commas exactly as they are. Leave a link as "" to hide it.
+Save the file (and upload it again if your host needs that). The ball moves on the next page load.
+
+Putting it online (free options)
+1. Netlify Drop (quickest): go to app.netlify.com/drop, drag this whole folder onto the page.
+   You get a web address straight away. To update, edit data.json and drag the folder again.
+2. GitHub Pages (easiest to keep updating): create a repository, upload these files,
+   then Settings > Pages > Deploy from branch (main). To update, open data.json on
+   github.com, click the pencil icon, change the numbers and commit.
+3. The school's own website: ask whoever runs it to upload this folder, for example
+   at meridianangel.../goal. This gives the most trustworthy address for parents.
+
+Link rules (built into the page)
+- The donate button only works with a link starting https://www.gofundme.com/ or https://gofund.me/.
+  Anything else (a typo, http://, a look-alike site) hides the button and shows "Donation link coming soon".
+- Website and social links must start with https:// or they are hidden.
+
+Security headers
+- _headers sets the security headers (Content-Security-Policy, X-Frame-Options, nosniff,
+  Referrer-Policy). Netlify and Cloudflare Pages read this file automatically.
+- GitHub Pages ignores _headers. The page also carries the same Content-Security-Policy in a
+  <meta> tag, but GitHub Pages can't send X-Frame-Options, so Netlify is the safer host.
+- The policy allows the page's own <style> and <script> by fingerprint (hash). Editing data.json
+  is always fine. If anyone edits the <style> or <script> inside index.html, the fingerprints in
+  _headers and in the <meta> tag must be regenerated, or the page will lose its styling or
+  stop working.
+
+Note: opening index.html straight from your computer shows the numbers saved inside
+the page; the latest data.json numbers load once the site is on a web host.

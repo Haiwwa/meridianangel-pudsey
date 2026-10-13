@@ -1,0 +1,6 @@
+/*
+  Content-Security-Policy: default-src 'self'; script-src 'self' 'sha256-+VYlpmEhTO0eAW5nEebJRSFSbtdKZu62i81eVXAVx9o='; style-src 'self' 'sha256-3k91BA87yVT7bB0o4iAp6o+pSskvwOSzDdTid31Wqyw=' 'sha256-wq5PA6zwVOOoafdmiBdOHObCRtPtG8fvZDG8YaLW7Y8='; img-src 'self'; font-src 'self'; connect-src 'self'; object-src 'none'; base-uri 'none'; form-action 'none'; frame-ancestors 'none'
+  X-Frame-Options: DENY
+  X-Content-Type-Options: nosniff
+  Referrer-Policy: strict-origin-when-cross-origin
+  Permissions-Policy: camera=(), microphone=(), geolocation=(), payment=(), usb=()
